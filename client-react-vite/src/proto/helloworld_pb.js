@@ -501,4 +501,4 @@ proto.helloworld.HelloReply.prototype.setMessage = function(value) {
 };
 
 
-goog.object.extend(exports, proto.helloworld);
+export default proto.helloworld;

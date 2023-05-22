@@ -191,5 +191,4 @@ proto.helloworld.GreeterPromiseClient.prototype.sayRepeatHello =
 };
 
 
-module.exports = proto.helloworld;
-
+export default proto.helloworld;

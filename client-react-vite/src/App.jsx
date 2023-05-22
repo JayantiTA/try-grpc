@@ -2,16 +2,15 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { HelloRequest, RepeatHelloRequest } from './proto/helloworld_pb'
-import { GreeterClient } from './proto/helloworld_grpc_web_pb'
+import helloworld from './proto/helloworld_grpc_web_pb';
 
 function App() {
-  const client = new GreeterClient('http://localhost:8080',
+  const client = new helloworld.GreeterClient('http://localhost:8080',
     null, null)
-  const request = new HelloRequest()
-  request.setName('a'.repeat(240*320*3))
+  const request = new helloworld.HelloRequest()
+  request.setName('a')
 
-  const streamRequest = new RepeatHelloRequest();
+  const streamRequest = new helloworld.RepeatHelloRequest();
   streamRequest.setName('World');
   streamRequest.setCount(5);
 
